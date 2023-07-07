@@ -1,0 +1,15 @@
+<tr hx-trigger='cancel' class='editing' hx-get="{% url 'getProduct' prod.id%}">
+    <th scope="row">{{prod.id}}</th>
+    <td><input name='name' value='{{prod.name}}'></td>
+    <td><input name='category' value='{{prod.category}}'></td>
+    <td><input name='stock' type='number' value='{{prod.stock}}'></td>
+    <td><input name='price' type='number' value='{{prod.price}}'></td>
+    <td>
+      <button class="btn btn-danger" hx-get="{% url 'getProduct' prod.id %}" hx-target="closest tr">
+        Cancel
+      </button>
+      <button class="btn btn-light" hx-put="{% url 'getProduct' prod.id %}" hx-include="closest tr">
+        Save
+      </button>
+    </td>
+</tr> 

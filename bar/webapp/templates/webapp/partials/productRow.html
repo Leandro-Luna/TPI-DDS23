@@ -1,0 +1,19 @@
+<tr>
+    <th scope="row">{{prod.id}}</th>
+    <td>{{prod.name}}</td>
+    <td>{{prod.category}}</td>
+    <td>{{prod.stock}}</td>
+    <td>{{prod.price}}</td>
+    <td><button type="button" hx-get="{% url 'editProduct' prod.id %}" hx-target="closest tr" hx-swap="outerHTML" class="btn btn-primary" _="on click
+        if .editing is not empty
+          Swal.fire({title: 'Ya se encuentra editando!',
+                     showCancelButton: true,
+                     confirmButtonText: 'Editar este producto',
+                     text:'Ya se encuentra editando un producto! Desea seguir editandolo?'})
+          if the result's isConfirmed is false
+            halt
+          end
+          send cancel to .editing
+        end
+        trigger edit">Editar</button></td>
+  </tr>

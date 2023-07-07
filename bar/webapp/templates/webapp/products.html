@@ -1,0 +1,5 @@
+{% extends 'webapp/partials/newbase.html' %}
+{% block content %}
+<div id="tabs" hx-get="{{request.path}}/Agua" hx-trigger="load delay:100ms" hx-target="#tabs" hx-swap="innerHTML">
+</div>
+{% endblock  %}
